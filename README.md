@@ -370,12 +370,72 @@ public class Calculator {
 ![Calculator 2023-01-23 16-30-34](https://user-images.githubusercontent.com/27882232/214023792-be537995-7453-4ad4-a7c8-f9248a403fe5.gif)
 
 ***
-#### Example 2: A java code to count new lines, white spaces & number digit from a stream inputed by user
+#### Example 2: A java code to calculate Factorial values in graphical view
+
+```
+import java.math.BigInteger;
+import java.awt.*;
+import java.lang.String;
+import java.awt.event.*;
+import java.applet.Applet;
+public class Factorial extends Applet implements ActionListener {
+    Button n0;
+    TextField t,tt;
+    Label l;
+    public void init(){
+        Panel pro=new Panel();
+        pro.setLayout(new GridLayout());
+        add(new Label("Enter any Integer vlaue"));
+        add(t =new TextField(20));
+        add(new Label("Factorial value is:"));
+        add(tt =new TextField(20));   
+        add(n0 =new Button("Compute"));  
+        n0.addActionListener(this);
+    }
+    public void actionPerformed(ActionEvent e){
+        int j,k;
+        k=Integer.parseInt(t.getText());
+        BigInteger f= BigInteger.ONE;
+        for(j=1;j<=k;j++)
+            f=f.multiply(BigInteger.valueOf(j));
+            tt.setText(String.valueOf(f));
+            repaint();
+    }
+}
+```
+#### Output :
+![factorial](https://user-images.githubusercontent.com/27882232/214025309-d84f6c3a-986c-4bea-90be-4e2000ae2e38.jpg)
+
+***
+#### Example 3: A java code to calculate Factorial values in graphical view
+
+```
+
+```
+#### Output :
+
+***
+#### Example 2: A java code to calculate Factorial values in graphical view
 
 ```
 ```
 #### Output :
 
 ***
-#### Example 2: A java code to count new lines, white spaces & number digit from a stream inputed by user
+#### Example 2: A java code to calculate Factorial values in graphical view
 
+```
+```
+#### Output :
+
+***
+#### Example 2: A java code to calculate Factorial values in graphical view
+
+```
+```
+#### Output :
+
+***
+#### Example 2: A java code to calculate Factorial values in graphical view
+
+```
