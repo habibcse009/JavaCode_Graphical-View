@@ -366,9 +366,16 @@ public class Calculator {
 	}
 }
 ```
-#### Output : ![calculator](https://user-images.githubusercontent.com/27882232/214017368-0da3bd93-e68a-4901-a0c4-ad9bd658fa2a.jpg)
+#### Output :
+![Calculator 2023-01-23 16-30-34](https://user-images.githubusercontent.com/27882232/214023792-be537995-7453-4ad4-a7c8-f9248a403fe5.gif)
 
 ***
 #### Example 2: A java code to count new lines, white spaces & number digit from a stream inputed by user
 
 ```
+```
+#### Output :
+
+***
+#### Example 2: A java code to count new lines, white spaces & number digit from a stream inputed by user
+
