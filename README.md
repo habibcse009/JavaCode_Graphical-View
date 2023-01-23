@@ -407,17 +407,142 @@ public class Factorial extends Applet implements ActionListener {
 ![factorial](https://user-images.githubusercontent.com/27882232/214025309-d84f6c3a-986c-4bea-90be-4e2000ae2e38.jpg)
 
 ***
-#### Example 3: A java code to calculate Factorial values in graphical view
+#### Example 3: A java code to show sample progress bar or loading bar in graphical view
 
 ```
-
+import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ProgressIndicator;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+ 
+public class ProgressSample extends Application {
+ 
+final Float[] values = new Float[] {-1.0f, 0f, 0.6f, 1.0f};
+final Label [] labels = new Label[values.length];
+final ProgressBar[] pbs = new ProgressBar[values.length];
+final ProgressIndicator[] pins = new ProgressIndicator[values.length];
+final HBox hbs [] = new HBox [values.length];
+ 
+    @Override
+    public void start(Stage stage) {
+        Group root = new Group();
+        Scene scene = new Scene(root, 300, 250);
+        stage.setScene(scene);
+        stage.setTitle("Progress Controls");
+ 
+        for (int i = 0; i < values.length; i++) {
+            final Label label = labels[i] = new Label();
+            label.setText("progress:" + values[i]);
+ 
+            final ProgressBar pb = pbs[i] = new ProgressBar();
+            pb.setProgress(values[i]);
+ 
+            final ProgressIndicator pin = pins[i] = new ProgressIndicator();
+            pin.setProgress(values[i]);
+            final HBox hb = hbs[i] = new HBox();
+            hb.setSpacing(5);
+            hb.setAlignment(Pos.CENTER);
+            hb.getChildren().addAll(label, pb, pin);
+        }
+ 
+        final VBox vb = new VBox();
+        vb.setSpacing(5);
+        vb.getChildren().addAll(hbs);
+        scene.setRoot(vb);
+        stage.show();
+    }
+        
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
 ```
 #### Output :
 
+
+https://user-images.githubusercontent.com/27882232/214025893-8960005f-459d-406c-8b15-36d2a1d6a9af.mp4
+
+
 ***
-#### Example 2: A java code to calculate Factorial values in graphical view
+#### Example 4: A java code to show download bar in graphical view
 
 ```
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.text.html.*;
+
+public class SwingProgressBar{
+    final static int interval = 1000;
+	int i;
+	JLabel label;
+    JProgressBar pb;
+    Timer timer;
+    JButton button;
+
+    public SwingProgressBar() {
+		JFrame frame = new JFrame("Swing Progress Bar");
+        button = new JButton("Start");
+        button.addActionListener(new ButtonListener());
+
+		pb = new JProgressBar(0, 20);
+        pb.setValue(0);
+        pb.setStringPainted(true);
+
+		label = new JLabel("habibcse009.net");
+		
+		JPanel panel = new JPanel();
+        panel.add(button);
+        panel.add(pb);
+
+        JPanel panel1 = new JPanel();
+        panel1.setLayout(new BorderLayout());
+        panel1.add(panel, BorderLayout.NORTH);
+		panel1.add(label, BorderLayout.CENTER);
+        panel1.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        frame.setContentPane(panel1);
+        frame.pack();
+        frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //Create a timer.
+        timer = new Timer(interval, new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+				if (i == 20){
+					Toolkit.getDefaultToolkit().beep();
+					timer.stop();
+					button.setEnabled(true);
+					pb.setValue(0);
+					String str = "<html>" + "<font color=\"#FF0000\">" + "<b>" + "Downloading completed." + "</b>" + "</font>" + "</html>";
+					label.setText(str);
+				}
+				i = i + 1;
+                pb.setValue(i);
+            }
+        });
+    }
+
+    class ButtonListener implements ActionListener {
+        public void actionPerformed(ActionEvent ae) {
+            button.setEnabled(false);
+			i = 0;
+			String str = "<html>" + "<font color=\"#008000\">" + "<b>" + "Downloading is in process......." + "</b>" + "</font>" + "</html>";
+			label.setText(str);
+            timer.start();
+        }
+    }
+    
+    public static void main(String[] args) {
+        SwingProgressBar spb = new SwingProgressBar();
+    }
+}
+
 ```
 #### Output :
 
