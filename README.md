@@ -465,8 +465,7 @@ final HBox hbs [] = new HBox [values.length];
 ```
 #### Output :
 
-
-https://user-images.githubusercontent.com/27882232/214025893-8960005f-459d-406c-8b15-36d2a1d6a9af.mp4
+![Progress Controls 2023-01-23 17-11-49](https://user-images.githubusercontent.com/27882232/214026928-3793a829-5ef7-4c55-a388-fa29335e9b5e.gif)
 
 
 ***
@@ -544,10 +543,11 @@ public class SwingProgressBar{
 }
 
 ```
-#### Output :
+#### Output : 
+![Swing Progress Bar 2023-01-23 17-15-41](https://user-images.githubusercontent.com/27882232/214026857-01410af6-fc26-459c-9ed8-2abcf0a883b3.gif)
 
 ***
-#### Example 2: A java code to calculate Factorial values in graphical view
+#### Example 5: A java code to calculate Factorial values in graphical view
 
 ```
 ```
